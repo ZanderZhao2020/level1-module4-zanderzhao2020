@@ -44,3 +44,23 @@ word_anagrams = {
     "unreal": ["neural"],
     "wonderful": ["underflow"],
     "zeal": ["laze"]}
+
+class Anagrams(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.info = tk.Label(self)
+        self.info.place(relx=0, rely=0, relwidth=0.8, relheight=0.2)
+        self.new_word = tk.Button(self, text="Get New Word!", command=self.gen_new_word)
+        self.new_word.place(relx=0.8, rely=0, relwidth=0.2, relheight=0.2)
+        self.gen_new_word()
+        self.correct = tk.Label(self)
+        self.correct.place(relx=0, rely=0.8, relwidth=1, relheight=0.2)
+    def gen_new_word(self):
+        self.word = random.choice(list(word_anagrams.keys()))
+        self.answers = word_anagrams[self.word]
+        self.info.configure(text="Guess the " + str(len(self.answers)) + " anagram(s) for the word: " + self.word)
+if __name__ == "__main__":
+    app = Anagrams()
+    app.title("Anagrams")
+    app.geometry("500x250")
+    app.mainloop()

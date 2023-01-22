@@ -37,3 +37,42 @@ Log Search using a Id-Name Dictionary
 import tkinter as tk
 from tkinter import simpledialog, messagebox
 
+class LogSearch(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.add = tk.Button(text="Add", command=self.onadd)
+        self.add.place(relx=0.1, rely=0.1, relwidth=0.15, relheight=0.8)
+        self.search = tk.Button(text="Search", command=self.onsearch)
+        self.search.place(relx=0.3, rely=0.1, relwidth=0.15, relheight=0.8)
+        self.view = tk.Button(text="View", command=self.onview)
+        self.view.place(relx=0.5, rely=0.1, relwidth=0.15, relheight=0.8)
+        self.remove = tk.Button(text="Remove", command=self.onremove)
+        self.remove.place(relx=0.7, rely=0.1, relwidth=0.15, relheight=0.8)
+        self.dict = {}
+    def onadd(self):
+        id = simpledialog.askstring("Prompt", "Enter an ID number")
+        name = simpledialog.askstring("Prompt", "Enter a name")
+        self.dict[id] = name
+    def onsearch(self):
+        id = simpledialog.askstring("Prompt", "Enter an ID number")
+        if id in self.dict:
+            messagebox.showinfo("Message", self.dict[id])
+        else:
+            messagebox.showerror("Error", "That ID does not exist")
+    def onview(self):
+        message = ""
+        for id, name in self.dict.items():
+            message += "ID: " + id + "  Name: " + name
+        messagebox.showinfo("Message", message)
+    def onremove(self):
+        id = simpledialog.askstring("Prompt", "Enter an ID number")
+        if id in self.dict:
+            self.dict.pop(id)
+        else:
+            messagebox.showerror("Error", "That ID does not exist")
+        pass
+if __name__ == "__main__":
+    app = LogSearch()
+    app.title("LogSearch")
+    app.geometry("750x50")
+    app.mainloop()
