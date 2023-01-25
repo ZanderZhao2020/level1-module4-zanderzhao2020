@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73b7992c-ff9c-4f11-b6c2-8881c07729d4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/_01_dictionaries/_b_intro_to_dictionaries.py" beforeDir="false" afterPath="$PROJECT_DIR$/_01_dictionaries/_b_intro_to_dictionaries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_01_dictionaries/_c_log_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/_01_dictionaries/_c_log_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_02_memory_match/memory_match.py" beforeDir="false" afterPath="$PROJECT_DIR$/_02_memory_match/memory_match.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_03_anagrams/anagrams.py" beforeDir="false" afterPath="$PROJECT_DIR$/_03_anagrams/anagrams.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,13 +26,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Zander/Documents/GitHub/level1-module4-zanderzhao2020&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/zander/level1-module4-zanderzhao2020"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.anagrams">
     <configuration name="_c_log_search" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="level1-module4-zanderzhao2020" />

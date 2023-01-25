@@ -28,30 +28,42 @@ class MemoryMatch(tk.Tk):
     def __init__(self):
         super().__init__()
 
+
         # 4 copies of each value
         num_copies_each_value = 4
         buttons_per_row = MemoryMatch.TOTAL_BUTTONS / 4
         button_width, button_height = self.setup_buttons(buttons_per_row)
-
+        self.dict = {}
+        self.score = 0
+        self.previous = None
+        set = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         for i in range(MemoryMatch.TOTAL_BUTTONS):
             row_num = int(i / buttons_per_row)
             col_num = int(i % buttons_per_row)
             row_y = row_num * button_height
             col_x = col_num * button_width
 
-            button = tk.Button(self, text='', fg='black', font=('arial', 24, 'bold'))
+            button = tk.Button(self, text='', fg='black', font=('arial', 24, 'bold'), bg="gray")
             button.place(x=col_x, y=row_y, width=button_width, height=button_height)
+            button.clicked = False
 
             button.bind('<ButtonPress>', self.on_button_press)
+            while True:
+                num = random.randint(0, 12)
+                if set[num] < 4:
+                    self.dict[button] = num + 1
+                    set[num] += 1
+                    break
 
     def on_button_press(self, event):
         button_pressed = event.widget
         print('Button ' + str(button_pressed) + ' was pressed')
-
-        if button_pressed['state'] == tk.DISABLED:
-            button_pressed.configure(state=tk.NORMAL, text='ON')
-        elif button_pressed['state'] == tk.NORMAL:
-            button_pressed.configure(state=tk.DISABLED, text='OFF')
+        if button_pressed.clicked:
+            button_pressed.configure(state=tk.NORMAL, text="", bg="gray")
+            button_pressed.clicked = False
+        else:
+            button_pressed.configure(state=tk.ACTIVE, text=str(self.dict[button_pressed]), bg="green")
+            button_pressed.clicked = True
 
     def setup_buttons(self, buttons_per_row):
         # Window size needs to be updated immediately here so the
